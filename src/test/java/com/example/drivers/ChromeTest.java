@@ -1,4 +1,4 @@
-package com.example;
+package com.example.drivers;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;

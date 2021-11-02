@@ -8,6 +8,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 
 import java.util.List;
 
@@ -168,6 +169,23 @@ public class WebtablesTest {
         Thread.sleep(5000L);
 
         assertEquals(0,driver.findElements(By.className("modal-content")).size());
+    }
+
+    @Test
+    void paginationTest() {
+        // comprobamos que exiten 10 páginas
+        // .pagination-bottom select
+        // div[@class='pagination-botom']//select
+        assertEquals(10, driver.findElements(By.className("rt-ttr-group")).size());
+
+        WebElement selector = driver.findElement(By.cssSelector(".pagination-bottom select"));
+        js.executeScript("arguments[0].scrollIntoView();",selector);
+        selector.click();
+        // seleccionamos el option de 20 páginas
+        // .pagination-bottom select option[value='20']
+        // div[@class='pagination-botom']//select//option[@value='20']
+        WebElement option20 = driver.findElement(By.cssSelector(".pagination-bottom select option[value='20']"));
+        option20.click();
     }
 
 }

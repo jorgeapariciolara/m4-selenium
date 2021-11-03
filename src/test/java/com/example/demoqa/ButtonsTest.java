@@ -54,7 +54,7 @@ public class ButtonsTest {
         // hacer doble click
         WebElement button = driver.findElement(By.id("rightClickBtn"));
         Actions action = new Actions(driver);
-        action.click(button).perform();
+        action.contextClick(button).perform();
         // comprobar que aparece un texto
         WebElement message = driver.findElement(By.id("rightClickMessage"));
         assertEquals("You have done a right click", message.getText());

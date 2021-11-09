@@ -28,6 +28,13 @@
             <artifactId>selenium-java</artifactId>
             <version>4.0.0</version>
         </dependency>
+
+        <!-- JSP -->
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-jasper</artifactId>
+            <version>9.0.54</version>
+        </dependency>
     </dependencies>
 
 </project>
